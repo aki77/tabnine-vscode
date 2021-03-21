@@ -106,7 +106,8 @@ function makeCompletionItem(args: {
     item.detail = BRAND_NAME;
   }
 
-  item.sortText = String.fromCharCode(0) + String.fromCharCode(args.index);
+  // NOTE: low priority
+  item.sortText = "\uffff" + 'z' + String.fromCharCode(args.index);
   item.insertText = new vscode.SnippetString(
     escapeTabStopSign(args.entry.new_prefix)
   );
